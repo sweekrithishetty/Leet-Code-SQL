@@ -1,0 +1,7 @@
+
+select distinct(teachers.country), sum(student_count) as student_count
+from courses 
+inner join teachers
+  On courses.teacher_id = teachers.id 
+group by teachers.country 
+having teachers.country like 'U%' 
